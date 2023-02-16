@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main" ng-app="mytodo" ng-controller="myCtrl">
+      <h1>Task List App</h1>
+      <div class="search">
+        <input type="text" [(ngModel)]="task" />
+        <span (click)="addTask(task)"><i class="fas fa-plus"></i></span>
+      </div>
+      <ul>
+        <li *ngFor="let task of tasks">
+          {{ task.name
+          }}<i class="fas fa-trash-alt" (click)="deleteTask(task.id)"></i>
+        </li>
+      </ul>
+      <p></p>
+    </div>
+  </body>
+</html>
